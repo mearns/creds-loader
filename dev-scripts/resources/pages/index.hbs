@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{name}}</title>
+
+    <style type='text/css'>
+        body {
+            width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        img#logo {
+            display: block;
+            max-width: 600px;
+            max-height: 200px;
+            width: auto;
+            height: auto;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>{{name}} {{version}}</h1>
+
+    {{#logo}}
+    <img id="logo" src="{{logo}}" alt="Project logo for {{name}}" />
+    {{/logo}}
+
+    <p>
+        <strong><a href="{{repository.url}}" title="View project repo">Project repo</a></strong>
+    </p>
+
+    <h2>Reports for Humans</h2>
+    <ul>
+        <li><a href="reports/unit-tests/index.html" title="Unit test report">Unit tests</a></li>
+        <li><a href="reports/coverage/lcov-report/index.html" title="Code coverage report">Code Coverage</a></li>
+    </ul>
+
+    <h2>Reports for Machines</h2>
+    <ul>
+        <li>
+            <a href="reports/xunit.xml" title="xunit-format XML results for unit tests" </li>Xunit Results (XML)</a>
+        </li>
+        <li>
+            <a href="reports/coverage/cobertura-coverage.xml" title="Cobertura format code coverage results">
+                Cobertura Code Coverage (XML)
+            </a>
+        </li>
+        <li>
+            <a href="reports/coverage/clover.xml" title="Clover format code coverage results">
+                Clover Code Coverage (XML)
+            </a>
+        </li>
+        <li>
+            <a href="reports/coverage/lcov.info" title="LCOV format code coverage results">
+                LCOV Code Coverage
+            </a>
+        </li>
+        <li>
+            <a href="reports/coverage/coverage-final.json" title="JSON format code coverage results">
+                JSON Code Coverage
+            </a>
+        </li>
+    </ul>
+</body>
+
+</html>

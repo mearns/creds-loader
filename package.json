@@ -1,0 +1,56 @@
+{
+  "name": "creds-loader",
+  "version": "0.1.0",
+  "description": "Loads credentials from a variety of sources.",
+  "keywords": [],
+  "author": "Brian Mearns <mearns.b@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mearns/creds-loaders.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mearns/creds-loaders/issues"
+  },
+  "homepage": "https://github.com/mearns/creds-loaders#readme",
+  "engines": {
+    "node": "^12.14.0"
+  },
+  "main": "src/index.js",
+  "files": [
+    "src/**/*"
+  ],
+  "scripts": {
+    "clean": "rimraf reports/ public/",
+    "pretty": "pretty-quick --staged",
+    "pretty-all": "prettier --write src/**/*.js ./*.js ./*.json ./*.yaml ./*.yml",
+    "check": "eslint --max-warnings 0 --no-error-on-unmatched-pattern --format codeframe src/ test/ dev-scripts/ \"./*.js\"",
+    "test": "jest --coverage",
+    "test-only": "jest",
+    "verify": "npm run check && npm run test",
+    "report": "mkdirp public && copyfiles logo.png public/ && copyfiles \"reports/**/*\" public && mustache package.json dev-scripts/resources/pages/index.hbs > public/index.html",
+    "start": "node ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run pretty -s"
+    }
+  },
+  "logo": "logo.png",
+  "devDependencies": {
+    "copyfiles": "^2.4.0",
+    "eslint": "^7.13.0",
+    "eslint-config-mearns": "git+https://github.com/mearns/eslint-config-mearns.git#v0.3.0",
+    "husky": "^4.3.0",
+    "jest": "^26.6.3",
+    "jest-junit": "^12.0.0",
+    "jest-stare": "^2.2.0",
+    "mkdirp": "^1.0.4",
+    "mustache": "^4.0.1",
+    "node": "^13.14.0",
+    "nyc": "^15.1.0",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.2"
+  },
+  "dependencies": {}
+}
