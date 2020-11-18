@@ -52,5 +52,10 @@
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "just-run-it": "^0.4.0",
+    "keytar": "^7.1.0",
+    "prompt-password": "^1.2.0"
+  },
+  "optionalDependencies": {}
 }
